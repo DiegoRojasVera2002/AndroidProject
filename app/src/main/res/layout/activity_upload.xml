@@ -1,0 +1,96 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="40dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/uploadTopic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/lavender_border"
+            android:gravity="start|center_vertical"
+            android:hint="Nombre..."
+            android:padding="16dp"
+            android:textColor="@color/lavender"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/uploadDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/lavender_border"
+            android:gravity="start|center_vertical"
+            android:hint="Apellido..."
+            android:padding="16dp"
+            android:textColor="@color/lavender"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/uploadLang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/lavender_border"
+            android:gravity="start|center_vertical"
+            android:hint=" Celular..."
+            android:padding="16dp"
+            android:textColor="@color/lavender"
+            android:textSize="14sp" />
+        <EditText
+            android:id="@+id/uploadDescr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/lavender_border"
+            android:gravity="start|center_vertical"
+            android:hint=" Descripcion.."
+            android:padding="16dp"
+            android:textColor="@color/lavender"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/uploadDirec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/lavender_border"
+            android:gravity="start|center_vertical"
+            android:padding="16dp"
+            android:textColor="@color/lavender"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/get_location_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/red"
+            android:text="Obtener ubicacion"
+            android:textSize="16sp"
+            app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/red"
+            android:text="ENVIAR"
+            android:textSize="16sp"
+            app:cornerRadius="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>

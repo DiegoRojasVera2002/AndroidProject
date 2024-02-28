@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "266930751829",
+    "project_id": "reportedengue",
+    "storage_bucket": "reportedengue.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266930751829:android:c84a82a3e174858bb6c7dc",
+        "android_client_info": {
+          "package_name": "com.example.reportedengue"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHZSbNtbK8uitgfjodu1LkKocmnZWZoUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
