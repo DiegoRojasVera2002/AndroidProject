@@ -6,12 +6,11 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import android.widget.ImageButton; // Importa la clase ImageButton
 
 public class MainActivity extends AppCompatActivity {
 
-    FloatingActionButton fab;
+    ImageButton fab; // Cambia la declaración a ImageButton
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab); // Encuentra el ImageButton por su id
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

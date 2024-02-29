@@ -13,6 +13,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,8 +39,8 @@ public class UploadActivity extends AppCompatActivity {
     Button saveButton, getLocation;
     EditText uploadTopic, uploadDesc, uploadLang, uploadDescr,uploadDirec;
 
-
-
+    Double Latitud;
+    Double Longitud;
 
     FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -92,6 +93,8 @@ public class UploadActivity extends AppCompatActivity {
                                     addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
                                     if (addresses != null && !addresses.isEmpty()) {
                                         String direccion = addresses.get(0).getAddressLine(0);
+                                        Latitud = addresses.get(0).getLatitude();
+                                        Longitud = addresses.get(0).getLongitude();
                                         uploadDirec.setText("" + direccion);
                                         Toast.makeText(UploadActivity.this, "tu direccion: " + direccion, Toast.LENGTH_SHORT).show();
                                     } else {
@@ -134,16 +137,26 @@ public class UploadActivity extends AppCompatActivity {
         String title = uploadTopic.getText().toString().trim();
         String desc = uploadDesc.getText().toString().trim();
         String lang = uploadLang.getText().toString().trim();
-        String descr = uploadDescr.getText().toString().trim();
+        String email = uploadDescr.getText().toString().trim();
         String direc = uploadDirec.getText().toString().trim();
 
         // Validación de campos no vacíos
-        if (title.isEmpty() || desc.isEmpty() || lang.isEmpty() || descr.isEmpty()) {
-            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+        if (title.isEmpty() || desc.isEmpty() || lang.isEmpty()) {
+            Toast.makeText(this, "Por Favor Completar todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        DataClass dataClass = new DataClass(title, desc, lang, descr,direc);
+        if (lang.length() >= 10 || lang.length() < 9 ){
+            Toast.makeText(this, "El numero no es valido", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, "Ingrese un correo electrónico válido", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        DataClass dataClass = new DataClass(title, desc, lang, email,direc, Latitud, Longitud);
 
         // Inflar el layout de progreso
         View progressLayout = getLayoutInflater().inflate(R.layout.progress_layout, null);
@@ -160,10 +173,10 @@ public class UploadActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(UploadActivity.this, "Saved", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UploadActivity.this, "CASO GUARDADO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
                             finish();
                         } else {
-                            Toast.makeText(UploadActivity.this, "Failed to save data", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UploadActivity.this, "ERROR AL GUARDAR EL CASO", Toast.LENGTH_SHORT).show();
                         }
                     }
                 })

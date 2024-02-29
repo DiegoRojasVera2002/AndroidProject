@@ -1,96 +1,107 @@
-<ScrollView
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/dengue2"
+
     tools:context=".UploadActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:orientation="vertical"
-        android:padding="40dp"
-        android:layout_marginTop="10dp">
+        android:padding="50dp">
 
         <EditText
             android:id="@+id/uploadTopic"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="130dp"
             android:background="@drawable/lavender_border"
             android:gravity="start|center_vertical"
-            android:hint="Nombre..."
-            android:padding="16dp"
+            android:hint="NOMBRE"
+            android:padding="12dp"
             android:textColor="@color/lavender"
-            android:textSize="14sp" />
+            android:textSize="10sp"
+            android:inputType="textCapCharacters"/>
 
         <EditText
             android:id="@+id/uploadDesc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/lavender_border"
             android:gravity="start|center_vertical"
-            android:hint="Apellido..."
-            android:padding="16dp"
+            android:hint="APELLIDO"
+            android:padding="12dp"
             android:textColor="@color/lavender"
-            android:textSize="14sp" />
+            android:textSize="10sp"
+            android:inputType="textCapCharacters"/>
 
         <EditText
             android:id="@+id/uploadLang"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/lavender_border"
             android:gravity="start|center_vertical"
-            android:hint=" Celular..."
-            android:padding="16dp"
+            android:hint="CELULAR"
+            android:padding="12dp"
             android:textColor="@color/lavender"
-            android:textSize="14sp" />
+            android:textSize="10sp"
+            android:inputType="number"/>
+
         <EditText
             android:id="@+id/uploadDescr"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/lavender_border"
             android:gravity="start|center_vertical"
-            android:hint=" Descripcion.."
-            android:padding="16dp"
+            android:hint=" CORREO (OPCIONAL)"
+            android:padding="12dp"
             android:textColor="@color/lavender"
-            android:textSize="14sp" />
+            android:textSize="10sp"
+            android:inputType="textEmailAddress"/>
 
         <EditText
             android:id="@+id/uploadDirec"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/lavender_border"
             android:gravity="start|center_vertical"
-            android:padding="16dp"
+            android:padding="12dp"
+            android:hint="UBICACION DE CASO DE DENGUE.."
             android:textColor="@color/lavender"
-            android:textSize="14sp" />
+            android:textSize="10sp"
+            android:editable="false"
+            android:inputType="none"/>
 
         <Button
             android:id="@+id/get_location_btn"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
             android:backgroundTint="@color/red"
             android:text="Obtener ubicacion"
-            android:textSize="16sp"
+            android:textSize="10sp"
             app:cornerRadius="20dp" />
 
         <Button
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
             android:backgroundTint="@color/red"
             android:text="ENVIAR"
-            android:textSize="16sp"
+            android:textSize="10sp"
             app:cornerRadius="20dp" />
 
     </LinearLayout>
 
-</ScrollView>
+</RelativeLayout>
